@@ -7,7 +7,7 @@ while (counts < guests) {
   guests_list[counts] = prompt("Enter name of guest " + (counts + 1) + ": ");
   counts += 1;
 }
-var sorted_list = guests_list.sort();
+const sorted_list = guests_list.sort();
 
 for (let i = 0; i < guests; i++) {
 answer = answer + "<li>"+sorted_list[i] +"</li>"
