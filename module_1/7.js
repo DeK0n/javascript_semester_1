@@ -9,3 +9,4 @@ for (let i = 1; i <= rolls; i++) {
   console.log(`sum = ${result}`);
 }
 document.querySelector("#target").innerHTML = result;
+
