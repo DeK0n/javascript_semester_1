@@ -1,7 +1,7 @@
 "use strict";
 const nameInput = prompt("Enter your name: ");
-let room = Math.floor(Math.random() * 4);
-let room_name = "";
+const room = Math.floor(Math.random() * 4);
+const room_name = "";
 if (room == 0) {
   room_name = "Griffindor";
 } else if (room == 1) {
