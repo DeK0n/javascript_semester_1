@@ -6,13 +6,9 @@ async function tvRequest(inputRequest) {
     );
     jsonData = await response.json();
     if (jsonData) {
-      document.getElementById("resultText").innerHTML = jsonData.name;
-      document
-        .getElementById("resultLink")
-        .setAttribute("href", `${jsonData.url}`);
-      document
-        .getElementById("resultImage")
-        .setAttribute("src", `${jsonData.image.medium}`);
+      resultText.textContent = jsonData.name;
+      resultLink.setAttribute("href", `${jsonData.url}`);
+      resultImage.setAttribute("src", `${jsonData.image.medium}`);
     }
     console.log("data", jsonData);
   } catch (error) {
@@ -21,29 +17,13 @@ async function tvRequest(inputRequest) {
   return jsonData;
 }
 function formSubmit(event) {
-  tvRequest(inputRequest);
-  
-  log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
+  const val = document.querySelector("input").value;
+  tvRequest(val);
   event.preventDefault();
 }
-function logSubmit(event) {
-    log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
-    event.preventDefault();
-  }
-  
-const form = document.getElementById('form');
-const resultLink = document.getElementById('resultLink');
-const resultImage = document.getElementById('resultImage');
-const resultText = document.getElementById('resultText');
-form.addEventListener('submit', logSubmit);
 
-<form id="form">
-  <label>Test field: <input type="text" /></label>
-  <br /><br />
-  <button type="submit">Submit form</button>
-</form>
-<p id="log"></p>
-
-
-
-// 1)3p2)4p
+const form = document.getElementById("form");
+const resultLink = document.getElementById("resultLink");
+const resultImage = document.getElementById("resultImage");
+const resultText = document.getElementById("resultText");
+form.addEventListener("submit", formSubmit);
