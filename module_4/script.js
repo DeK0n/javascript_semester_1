@@ -8,6 +8,8 @@ async function tvRequest(inputRequest) {
     if (jsonData) {
       resultText.textContent = jsonData.name;
       resultLink.setAttribute("href", `${jsonData.url}`);
+      resultLink.textContent="follow link to learn more";
+      pageText.textContent="you can edit input and search again:";
       resultImage.setAttribute("src", `${jsonData.image.medium}`);
     }
     console.log("data", jsonData);
@@ -26,4 +28,5 @@ const form = document.getElementById("form");
 const resultLink = document.getElementById("resultLink");
 const resultImage = document.getElementById("resultImage");
 const resultText = document.getElementById("resultText");
+const pageText = document.getElementById("pageText");
 form.addEventListener("submit", formSubmit);

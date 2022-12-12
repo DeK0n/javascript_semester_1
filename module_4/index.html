@@ -6,16 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <p id="resultText">---</p>
-    <a id="resultLink" href="">link</a>
-    <img id="resultImage" scr=""></img>
-
-
+    <div class="container">
+    <h2 class="header">Movie finder</h2>
+    <img class="page-image" id="resultImage" src='images/defaultimage.jpg'></img>
+    <p class="page-result"id="resultText"></p>
+    <a class="page-link"id="resultLink" href=""></a>
+    <p id="pageText">Input something and press submit:</p>
     <form id="form" action="https://api.tvmaze.com/search/shows">
         <input id="query" name="q" type="text">
         <input type="submit" value="Search">
     </form>
+    </div>
 </body>
 </html>
